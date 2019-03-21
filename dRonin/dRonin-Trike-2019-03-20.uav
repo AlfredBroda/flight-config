@@ -241,7 +241,7 @@
             <field name="LowpassOrder" values="1"/>
         </object>
         <object id="0x7EEBD242" name="StabilizationSettings">
-            <field name="ManualRate" values="250,250,250"/>
+            <field name="ManualRate" values="250,250,225"/>
             <field name="AcroDynamicRate" values="0,0,0"/>
             <field name="AcroDynamicTau" values="0.22499999403953552"/>
             <field name="AutotuneActuationEffort" values="0.06499999761581421,0.06499999761581421,0.09000000357627869"/>
@@ -263,7 +263,7 @@
             <field name="LowPowerStabilizationMaxTime" values="0"/>
             <field name="MaxLevelAngle" values="55,55,35"/>
             <field name="AcroDynamicTransition" values="70,70,70"/>
-            <field name="RateExpo" values="35,35,35"/>
+            <field name="RateExpo" values="35,35,30"/>
             <field name="RateExponent" values="30,30,30"/>
             <field name="HorizonExpo" values="30,30,30"/>
             <field name="DerivativeCutoff" values="23"/>
