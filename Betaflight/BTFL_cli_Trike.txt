@@ -4,7 +4,7 @@
 # Betaflight / KAKUTEF4V2 (KTV2) 3.5.7 Mar 15 2019 / 21:59:47 (e9130527c) MSP API: 1.40
 
 board_name KAKUTEF4V2
-manufacturer_id 
+manufacturer_id
 
 # name
 name Trike
@@ -319,13 +319,13 @@ mode_color 7 0 3
 # aux
 aux 0 0 0 1700 2100 0 0
 aux 1 2 1 900 1700 0 0
-aux 2 27 2 1700 2100 0 0
-aux 3 46 3 1700 2100 0 0
+aux 2 5 255 1300 1700 0 0
+aux 3 27 2 1700 2100 0 0
 aux 4 13 2 1300 2100 0 0
 aux 5 19 3 900 1300 0 0
 aux 6 26 0 1700 2100 0 0
 aux 7 28 1 1300 2100 0 0
-aux 8 39 3 900 1700 0 0
+aux 8 39 0 900 1300 0 0
 aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
 aux 11 0 0 900 900 0 0
@@ -421,7 +421,7 @@ set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
 set acc_calibration = 36,27,22
-set align_mag = DEFAULT
+set align_mag = CW180
 set mag_bustype = I2C
 set mag_i2c_device = 1
 set mag_i2c_address = 0
@@ -562,7 +562,7 @@ set gps_rescue_throttle_max = 1600
 set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
 set gps_rescue_min_sats = 8
-set deadband = 1
+set deadband = 10
 set yaw_deadband = 1
 set yaw_control_reversed = OFF
 set pid_process_denom = 4
@@ -785,4 +785,4 @@ set tpa_breakpoint = 1650
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
 
-# 
+#
