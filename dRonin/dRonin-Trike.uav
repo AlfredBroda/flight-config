@@ -6,7 +6,7 @@
     </version>
     <settings>
         <object id="0x9FB75C18" name="ActuatorSettings">
-            <field name="LowPowerStabilizationMaxPowerAdd" values="0.07000000029802322"/>
+            <field name="LowPowerStabilizationMaxPowerAdd" values="0.20000000298023224"/>
             <field name="LowPowerStabilizationTimeConstant" values="0.30000001192092896"/>
             <field name="MotorInputOutputCurveFit" values="0.8999999761581421"/>
             <field name="MotorInputOutputGain" values="1"/>
@@ -26,9 +26,9 @@
             <field name="AnalogPin" values="NONE"/>
         </object>
         <object id="0xB0DD94C6" name="AltitudeHoldSettings">
-            <field name="PositionKp" values="2.1929824352264404"/>
-            <field name="VelocityKp" values="0.24522040784358978"/>
-            <field name="VelocityKi" values="0.4564683139324188"/>
+            <field name="PositionKp" values="2.1008403301239014"/>
+            <field name="VelocityKp" values="0.2579716145992279"/>
+            <field name="VelocityKi" values="0.4600275158882141"/>
             <field name="AttitudeComp" values="120"/>
             <field name="MaxClimbRate" values="40"/>
             <field name="MaxDescentRate" values="15"/>
@@ -36,7 +36,7 @@
         </object>
         <object id="0x79173E9C" name="AnnunciatorSettings">
             <field name="AnnunciateAnytime" values="OK,Warning,HairOnFire,Warning,Warning,HairOnFire"/>
-            <field name="AnnunciateAfterArming" values="HairOnFire,HairOnFire,Warning,HairOnFire,HairOnFire,ManualControlOnly"/>
+            <field name="AnnunciateAfterArming" values="HairOnFire,Error,Warning,HairOnFire,Error,ManualControlOnly"/>
             <field name="ManualBuzzer" values="Accessory 0"/>
         </object>
         <object id="0x69C052FC" name="AttitudeSettings">
@@ -109,8 +109,8 @@
             <field name="Uart1" values="FrSKY SPort Telemetry"/>
             <field name="Uart3" values="S.Bus"/>
             <field name="Uart4" values="Disabled"/>
-            <field name="Uart5" values="Disabled"/>
-            <field name="Uart6" values="ComBridge"/>
+            <field name="Uart5" values="DShot ESC Telemetry"/>
+            <field name="Uart6" values="GPS"/>
             <field name="OSDPort" values="MAX7456 OSD"/>
             <field name="USB_HIDPort" values="USBTelemetry"/>
             <field name="USB_VCPPort" values="Disabled"/>
@@ -144,8 +144,8 @@
             <field name="ThrustDeadband" values="0.18000000715255737"/>
             <field name="RssiMax" values="2000"/>
             <field name="RssiMin" values="1000"/>
-            <field name="ChannelMin" values="180,172,1811,172,172,0,172,172,0,172"/>
-            <field name="ChannelNeutral" values="212,995,992,992,991,-1,992,992,-1,1188"/>
+            <field name="ChannelMin" values="180,172,1811,172,172,0,172,205,0,172"/>
+            <field name="ChannelNeutral" values="212,995,992,992,991,-1,992,1014,-1,1188"/>
             <field name="ChannelMax" values="1811,1808,172,1811,1811,0,1811,1811,0,1811"/>
             <field name="ArmedTimeout" values="30000"/>
             <field name="InvalidRXArmedTimeout" values="3000"/>
@@ -166,7 +166,7 @@
             <field name="Stabilization2Thrust" values="Direct"/>
             <field name="Stabilization3Thrust" values="Direct"/>
             <field name="FlightModeNumber" values="3"/>
-            <field name="FlightModePosition" values="Leveling,Autotune,Leveling,AltitudeHold,PositionHold,Manual"/>
+            <field name="FlightModePosition" values="Leveling,Horizon,Autotune,AltitudeHold,PositionHold,Manual"/>
         </object>
         <object id="0xB8E9BE08" name="MixerSettings">
             <field name="ThrottleCurve2" values="0,0.22499999403953552,0.44999998807907104,0.6749999523162842,0.8999999761581421"/>
@@ -247,11 +247,11 @@
             <field name="AutotuneActuationEffort" values="0.06499999761581421,0.06499999761581421,0.09000000357627869"/>
             <field name="MaximumRate" values="350,350,350"/>
             <field name="PoiMaximumRate" values="30,30,30"/>
-            <field name="RollRatePID" values="0.0020000000949949026,0.001500000013038516,0,0.30000001192092896"/>
-            <field name="PitchRatePID" values="0.0020000000949949026,0.001500000013038516,0,0.30000001192092896"/>
+            <field name="RollRatePID" values="0.002199999988079071,0.006500000134110451,5.500000042957254e-5,0.30000001192092896"/>
+            <field name="PitchRatePID" values="0.0020000000949949026,0.006500000134110451,5.500000042957254e-5,0.30000001192092896"/>
             <field name="YawRatePID" values="0.0035000001080334187,0.0035000001080334187,0,0.30000001192092896"/>
-            <field name="RollPI" values="6.126999855041504,1.5240000486373901,50"/>
-            <field name="PitchPI" values="6.126999855041504,1.5240000486373901,50"/>
+            <field name="RollPI" values="6.077000141143799,1.4019999504089355,50"/>
+            <field name="PitchPI" values="6.077000141143799,1.4019999504089355,50"/>
             <field name="YawPI" values="2.5,0,50"/>
             <field name="DerivativeGamma" values="0.6000000238418579"/>
             <field name="WeakLevelingKp" values="0.33000001311302185"/>
@@ -286,9 +286,9 @@
         </object>
         <object id="0x3DBFE97A" name="SystemIdent">
             <field name="NumAfPredicts" values="59904"/>
-            <field name="HoverThrottle" values="0.27410000562667847"/>
-            <field name="Tau" values="0.028999999165534973,0.03500000014901161,0.03099999949336052"/>
-            <field name="Beta" values="9.816594123840332,9.733814239501953,9.094521522521973"/>
+            <field name="HoverThrottle" values="0.3009999990463257"/>
+            <field name="Tau" values="0.03500000014901161,0.03400000184774399,0.03099999949336052"/>
+            <field name="Beta" values="9.858651161193848,9.836978912353516,9.29417896270752"/>
             <field name="NewTune" values="FALSE"/>
         </object>
         <object id="0x6F3BB6B0" name="SystemSettings">
