@@ -4,7 +4,7 @@ dump
 # Betaflight / MATEKF405 (MKF4) 3.5.7 Mar 15 2019 / 22:04:47 (e9130527c) MSP API: 1.40
 
 board_name MATEKF405
-manufacturer_id 
+manufacturer_id
 
 # name
 name Motylek
@@ -160,6 +160,7 @@ feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
 feature SOFTSERIAL
+feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
@@ -203,7 +204,7 @@ map TAER1234
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2 115200 57600 0 115200
 serial 3 0 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
@@ -421,7 +422,7 @@ set mag_i2c_device = 1
 set mag_i2c_address = 0
 set mag_spi_device = 0
 set mag_hardware = AUTO
-set mag_declination = 0
+set mag_declination = 5290
 set mag_calibration = 0,0,0
 set baro_bustype = I2C
 set baro_spi_device = 0
@@ -535,10 +536,10 @@ set imu_dcm_ki = 0
 set small_angle = 25
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
-set gps_provider = NMEA
+set gps_provider = UBLOX
 set gps_sbas_mode = AUTO
 set gps_auto_config = ON
-set gps_auto_baud = OFF
+set gps_auto_baud = ON
 set gps_ublox_use_galileo = OFF
 set gps_rescue_angle = 32
 set gps_rescue_initial_alt = 50
