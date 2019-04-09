@@ -1,8 +1,8 @@
 <uavobjects>
     <version>
         <hardware revision="1" serial="2e0026000f47363438303034" type="97"/>
-        <firmware date="20181012 15:29" hash="cd04c915" tag="myDronin"/>
-        <gcs date="detached at cd" hash="cd04c915" tag="(HEAD detached at cd04c9156)"/>
+        <firmware date="20190318 18:32" hash="be2d4a73" tag="myDronin"/>
+        <gcs date="20190318" hash="be2d4a73" tag="myDronin"/>
     </version>
     <settings>
         <object id="0x9FB75C18" name="ActuatorSettings">
@@ -36,7 +36,7 @@
         </object>
         <object id="0x79173E9C" name="AnnunciatorSettings">
             <field name="AnnunciateAnytime" values="OK,Warning,HairOnFire,Warning,Warning,HairOnFire"/>
-            <field name="AnnunciateAfterArming" values="HairOnFire,HairOnFire,ManualControlOnly,HairOnFire,HairOnFire,ManualControlOnly"/>
+            <field name="AnnunciateAfterArming" values="HairOnFire,HairOnFire,Warning,HairOnFire,HairOnFire,ManualControlOnly"/>
             <field name="ManualBuzzer" values="Accessory 0"/>
         </object>
         <object id="0x69C052FC" name="AttitudeSettings">
@@ -50,6 +50,15 @@
             <field name="ZeroDuringArming" values="TRUE"/>
             <field name="BiasCorrectGyro" values="TRUE"/>
             <field name="FilterChoice" values="CCC"/>
+        </object>
+        <object id="0x404B4580" name="BiflightSettings">
+            <field name="ServoMaxAngle" values="40"/>
+            <field name="ServoSpeed" values="300,300"/>
+            <field name="AdcServoFdbkMin" values="2040,2040"/>
+            <field name="AdcServoFdbkMid" values="2048,2048"/>
+            <field name="AdcServoFdbkMax" values="2056,2056"/>
+            <field name="ServoFdbkPin" values="NONE,NONE"/>
+            <field name="EnableBiFlight" values="Disable"/>
         </object>
         <object id="0x9220ECA" name="CameraStabSettings">
             <field name="MaxAxisLockRate" values="1"/>
@@ -72,7 +81,7 @@
             <field name="X" values="1,8,19,3,21,24,1,8,23,1,23,1,1,9,1,8,22,22,14,0,0,0,0,0"/>
             <field name="Y" values="1,1,1,2,3,2,6,6,6,8,8,10,13,12,14,14,12,13,6,7,0,0,0,0"/>
         </object>
-        <object id="0x7761C4DA" name="FlightBatterySettings">
+        <object id="0x5FF5070E" name="FlightBatterySettings">
             <field name="MaxCellVoltage" values="4.199999809265137"/>
             <field name="Capacity" values="2200"/>
             <field name="CellVoltageThresholds" values="3.5,3.299999952316284"/>
@@ -96,12 +105,12 @@
             <field name="SeaLevelPressure" values="1013"/>
             <field name="Set" values="FALSE"/>
         </object>
-        <object id="0xFD8B868A" name="HwKakutef4v2">
+        <object id="0x3464C58C" name="HwKakutef4v2">
             <field name="Uart1" values="FrSKY SPort Telemetry"/>
             <field name="Uart3" values="S.Bus"/>
             <field name="Uart4" values="Disabled"/>
             <field name="Uart5" values="Disabled"/>
-            <field name="Uart6" values="Disabled"/>
+            <field name="Uart6" values="ComBridge"/>
             <field name="OSDPort" values="MAX7456 OSD"/>
             <field name="USB_HIDPort" values="USBTelemetry"/>
             <field name="USB_VCPPort" values="Disabled"/>
@@ -130,7 +139,7 @@
             <field name="MaxLogRate" values="50"/>
             <field name="Profile" values="Fullbore"/>
         </object>
-        <object id="0x5FCD48F4" name="ManualControlSettings">
+        <object id="0x9C230D50" name="ManualControlSettings">
             <field name="Deadband" values="0"/>
             <field name="ThrustDeadband" values="0.18000000715255737"/>
             <field name="RssiMax" values="2000"/>
@@ -157,7 +166,7 @@
             <field name="Stabilization2Thrust" values="Direct"/>
             <field name="Stabilization3Thrust" values="Direct"/>
             <field name="FlightModeNumber" values="3"/>
-            <field name="FlightModePosition" values="Leveling,Autotune,TailTune,AltitudeHold,PositionHold,Manual"/>
+            <field name="FlightModePosition" values="Leveling,Autotune,Leveling,AltitudeHold,PositionHold,Manual"/>
         </object>
         <object id="0xB8E9BE08" name="MixerSettings">
             <field name="ThrottleCurve2" values="0,0.22499999403953552,0.44999998807907104,0.6749999523162842,0.8999999761581421"/>
@@ -192,7 +201,7 @@
             <field name="GPSConstellation" values="All"/>
             <field name="GPSSBASConstellation" values="All"/>
             <field name="GPSDynamicsMode" values="Airborne2G"/>
-            <field name="ComUsbBridgeSpeed" values="57600"/>
+            <field name="ComUsbBridgeSpeed" values="115200"/>
             <field name="MavlinkSpeed" values="57600"/>
             <field name="MSPSpeed" values="115200"/>
             <field name="LightTelemetrySpeed" values="1200"/>
@@ -286,7 +295,7 @@
             <field name="AirframeCategorySpecificConfiguration" values="2162736,4,0,0"/>
             <field name="AirframeType" values="Tri"/>
         </object>
-        <object id="0x2461DFFC" name="TriflightSettings">
+        <object id="0x33310CF2" name="TriflightSettings">
             <field name="DynamicYawMinThrottle" values="1"/>
             <field name="DynamicYawMaxThrottle" values="1"/>
             <field name="DynamicYawHoverPercent" values="0.5"/>
@@ -299,6 +308,7 @@
             <field name="AdcServoFdbkMid" values="30631.9375"/>
             <field name="AdcServoFdbkMax" values="17469.73828125"/>
             <field name="ServoFdbkPin" values="ADC3"/>
+            <field name="TailSpinDirection" values="CCW"/>
             <field name="EnableVirtualServo" values="Disable"/>
             <field name="EnableTriFlight" values="Enable"/>
         </object>
