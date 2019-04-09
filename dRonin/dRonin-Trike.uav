@@ -1,8 +1,8 @@
 <uavobjects>
     <version>
         <hardware revision="1" serial="2e0026000f47363438303034" type="97"/>
-        <firmware date="20190318 18:32" hash="be2d4a73" tag="myDronin"/>
-        <gcs date="20190318" hash="be2d4a73" tag="myDronin"/>
+        <firmware date="20190403 02:19" hash="a2a33328" tag="myDronin-dirty"/>
+        <gcs date="20190403" hash="a2a33328" tag="myDronin"/>
     </version>
     <settings>
         <object id="0x9FB75C18" name="ActuatorSettings">
@@ -156,7 +156,7 @@
             <field name="Arming" values="Switch+Throttle"/>
             <field name="ArmTime" values="1000"/>
             <field name="DisarmTime" values="500"/>
-            <field name="Stabilization1Settings" values="Attitude,Attitude,AxisLock"/>
+            <field name="Stabilization1Settings" values="Horizon,Horizon,Attitude"/>
             <field name="Stabilization2Settings" values="Attitude,Attitude,Rate"/>
             <field name="Stabilization3Settings" values="Rate,Rate,Rate"/>
             <field name="Stabilization1Reprojection" values="None"/>
@@ -165,8 +165,8 @@
             <field name="Stabilization1Thrust" values="Altitude With Stick Scaling"/>
             <field name="Stabilization2Thrust" values="Direct"/>
             <field name="Stabilization3Thrust" values="Direct"/>
-            <field name="FlightModeNumber" values="3"/>
-            <field name="FlightModePosition" values="Leveling,Horizon,Autotune,AltitudeHold,PositionHold,Manual"/>
+            <field name="FlightModeNumber" values="5"/>
+            <field name="FlightModePosition" values="Stabilized1,AltitudeHold,Leveling,PositionHold,ReturnToHome,Manual"/>
         </object>
         <object id="0xB8E9BE08" name="MixerSettings">
             <field name="ThrottleCurve2" values="0,0.22499999403953552,0.44999998807907104,0.6749999523162842,0.8999999761581421"/>
@@ -193,7 +193,7 @@
             <field name="Mixer10Type" values="Disabled"/>
         </object>
         <object id="0xFECECBDC" name="ModuleSettings">
-            <field name="AdminState" values="Disabled,Enabled,Enabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Enabled,Disabled,Disabled"/>
+            <field name="AdminState" values="Disabled,Enabled,Enabled,Disabled,Disabled,Disabled,Disabled,Disabled,Enabled,Disabled,Disabled,Enabled,Enabled,Disabled"/>
             <field name="TelemetrySpeed" values="115200"/>
             <field name="GPSSpeed" values="57600"/>
             <field name="GPSDataProtocol" values="UBX"/>
