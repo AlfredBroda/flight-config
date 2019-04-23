@@ -4,7 +4,7 @@ dump
 # Betaflight / MATEKF405 (MKF4) 3.5.7 Mar 15 2019 / 22:04:47 (e9130527c) MSP API: 1.40
 
 board_name MATEKF405
-manufacturer_id
+manufacturer_id 
 
 # name
 name Motylek
@@ -15,8 +15,8 @@ resource MOTOR 1 C06
 resource MOTOR 2 C07
 resource MOTOR 3 C08
 resource MOTOR 4 C09
-resource MOTOR 5 A15
-resource MOTOR 6 A08
+resource MOTOR 5 NONE
+resource MOTOR 6 NONE
 resource MOTOR 7 B08
 resource MOTOR 8 NONE
 resource SERVO 1 NONE
@@ -30,15 +30,15 @@ resource SERVO 8 NONE
 resource PPM 1 A03
 resource PWM 1 NONE
 resource PWM 2 A01
-resource PWM 3 A02
+resource PWM 3 NONE
 resource PWM 4 NONE
 resource PWM 5 NONE
 resource PWM 6 NONE
 resource PWM 7 NONE
 resource PWM 8 NONE
-resource LED_STRIP 1 B06
+resource LED_STRIP 1 A15
 resource SERIAL_TX 1 A09
-resource SERIAL_TX 2 A02
+resource SERIAL_TX 2 NONE
 resource SERIAL_TX 3 C10
 resource SERIAL_TX 4 NONE
 resource SERIAL_TX 5 C12
@@ -47,7 +47,7 @@ resource SERIAL_TX 7 NONE
 resource SERIAL_TX 8 NONE
 resource SERIAL_TX 9 NONE
 resource SERIAL_TX 10 NONE
-resource SERIAL_TX 11 A00
+resource SERIAL_TX 11 A02
 resource SERIAL_TX 12 NONE
 resource SERIAL_RX 1 A10
 resource SERIAL_RX 2 A03
@@ -82,7 +82,7 @@ resource SPI_MOSI 1 A07
 resource SPI_MOSI 2 B15
 resource SPI_MOSI 3 B05
 resource ESCSERIAL 1 A03
-resource CAMERA_CONTROL 1 NONE
+resource CAMERA_CONTROL 1 A08
 resource ADC_BATT 1 C05
 resource ADC_RSSI 1 B01
 resource ADC_CURR 1 C04
@@ -164,6 +164,7 @@ feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
+feature AIRMODE
 feature ESC_SENSOR
 feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
@@ -205,7 +206,7 @@ serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
 serial 2 2 115200 57600 0 115200
-serial 3 0 115200 57600 0 115200
+serial 3 16384 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
 
@@ -315,14 +316,14 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1700 2100 0 0
 aux 2 2 1 900 1700 0 0
-aux 3 27 3 1700 2100 0 0
-aux 4 13 3 1300 2100 0 0
-aux 5 15 0 900 1700 0 0
-aux 6 26 0 1700 2100 0 0
-aux 7 28 1 1300 1700 0 0
-aux 8 0 0 900 900 0 0
-aux 9 0 0 900 900 0 0
-aux 10 0 0 900 900 0 0
+aux 3 5 0 1300 1700 0 0
+aux 4 13 2 1300 2100 0 0
+aux 5 15 0 900 1300 0 0
+aux 6 19 3 1350 2100 0 0
+aux 7 26 0 1700 2100 0 0
+aux 8 33 3 1600 2100 0 0
+aux 9 34 3 1400 1600 0 0
+aux 10 46 2 1725 2100 0 0
 aux 11 0 0 900 900 0 0
 aux 12 0 0 900 900 0 0
 aux 13 0 0 900 900 0 0
@@ -374,7 +375,7 @@ rxfail 1 a
 rxfail 2 a
 rxfail 3 a
 rxfail 4 h
-rxfail 5 s 1000
+rxfail 5 s 1500
 rxfail 6 s 2000
 rxfail 7 h
 rxfail 8 h
@@ -488,11 +489,11 @@ set align_board_roll = 0
 set align_board_pitch = 0
 set align_board_yaw = 0
 set gimbal_mode = NORMAL
-set bat_capacity = 1300
-set vbat_max_cell_voltage = 43
+set bat_capacity = 3000
+set vbat_max_cell_voltage = 42
 set vbat_full_cell_voltage = 41
-set vbat_min_cell_voltage = 33
-set vbat_warning_cell_voltage = 35
+set vbat_min_cell_voltage = 30
+set vbat_warning_cell_voltage = 32
 set vbat_hysteresis = 1
 set current_meter = ADC
 set battery_meter = ADC
@@ -501,7 +502,7 @@ set use_vbat_alerts = ON
 set use_cbat_alerts = OFF
 set cbat_alert_percent = 10
 set vbat_cutoff_percent = 100
-set vbat_scale = 110
+set vbat_scale = 111
 set vbat_divider = 10
 set vbat_multiplier = 1
 set ibata_scale = 179
@@ -557,8 +558,8 @@ set gps_rescue_throttle_max = 1600
 set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_ON
 set gps_rescue_min_sats = 8
-set deadband = 2
-set yaw_deadband = 3
+set deadband = 5
+set yaw_deadband = 5
 set yaw_control_reversed = OFF
 set pid_process_denom = 4
 set runaway_takeoff_prevention = ON
@@ -599,7 +600,7 @@ set osd_ah_max_pit = 20
 set osd_ah_max_rol = 40
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 2081
+set osd_vbat_pos = 2120
 set osd_rssi_pos = 2145
 set osd_tim_1_pos = 234
 set osd_tim_2_pos = 234
@@ -607,17 +608,17 @@ set osd_remaining_time_estimate_pos = 2508
 set osd_flymode_pos = 2465
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 2521
-set osd_throttle_pos = 2167
+set osd_throttle_pos = 2113
 set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 237
 set osd_ah_sbar_pos = 2286
 set osd_ah_pos = 142
 set osd_current_pos = 2102
-set osd_mah_drawn_pos = 2113
+set osd_mah_drawn_pos = 2126
 set osd_craft_name_pos = 2091
 set osd_gps_speed_pos = 234
-set osd_gps_lon_pos = 234
-set osd_gps_lat_pos = 234
+set osd_gps_lon_pos = 2048
+set osd_gps_lat_pos = 2065
 set osd_gps_sats_pos = 234
 set osd_home_dir_pos = 2497
 set osd_home_dist_pos = 2498
@@ -637,8 +638,8 @@ set osd_battery_usage_pos = 234
 set osd_disarmed_pos = 234
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
-set osd_esc_tmp_pos = 153
-set osd_esc_rpm_pos = 2134
+set osd_esc_tmp_pos = 2201
+set osd_esc_rpm_pos = 2135
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_core_temp_pos = 234
@@ -646,7 +647,7 @@ set osd_stat_rtc_date_time = OFF
 set osd_stat_tim_1 = OFF
 set osd_stat_tim_2 = ON
 set osd_stat_max_spd = ON
-set osd_stat_max_dist = OFF
+set osd_stat_max_dist = ON
 set osd_stat_min_batt = ON
 set osd_stat_endbatt = OFF
 set osd_stat_battery = ON
