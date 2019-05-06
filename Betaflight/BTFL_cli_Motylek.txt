@@ -1,4 +1,4 @@
-# dump
+dump
 
 # version
 # Betaflight / MATEKF405 (MKF4) 3.5.7 Mar 15 2019 / 22:04:47 (e9130527c) MSP API: 1.40
@@ -212,13 +212,13 @@ serial 30 64 115200 57600 0 115200
 
 # led
 led 0 8,10:S:AW:2
-led 1 7,9:SW:C:3
-led 2 6,8:W:CI:3
-led 3 7,7:NW:C:3
-led 4 8,6:N:C:3
-led 5 9,7:NE:C:3
-led 6 10,8:E:CI:3
-led 7 9,9:ES:C:3
+led 1 7,9:SW:L:6
+led 2 6,8:W:L:6
+led 3 7,7:NW:L:6
+led 4 8,6:N:L:6
+led 5 9,7:NE:L:6
+led 6 10,8:E:L:6
+led 7 9,9:ES:L:6
 led 8 0,0::C:0
 led 9 0,0::C:0
 led 10 0,0::C:0
@@ -317,13 +317,13 @@ aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1700 2100 0 0
 aux 2 2 1 900 1700 0 0
 aux 3 5 0 1300 1700 0 0
-aux 4 46 2 1725 2100 0 0
-aux 5 13 2 1300 2100 0 0
-aux 6 15 0 900 1300 0 0
-aux 7 19 3 1150 1400 0 0
-aux 8 26 0 1700 2100 0 0
-aux 9 33 3 1600 2100 0 0
-aux 10 34 3 1200 1400 0 0
+aux 4 13 2 1300 2100 0 0
+aux 5 15 0 900 1300 0 0
+aux 6 19 3 1150 1400 0 0
+aux 7 26 0 1700 2100 0 0
+aux 8 33 3 1600 2100 0 0
+aux 9 34 3 1200 1400 0 0
+aux 10 0 0 900 900 0 0
 aux 11 0 0 900 900 0 0
 aux 12 0 0 900 900 0 0
 aux 13 0 0 900 900 0 0
@@ -424,7 +424,7 @@ set mag_i2c_address = 0
 set mag_spi_device = 0
 set mag_hardware = AUTO
 set mag_declination = 5290
-set mag_calibration = 0,0,0
+set mag_calibration = 515,206,-3043
 set baro_bustype = I2C
 set baro_spi_device = 0
 set baro_i2c_device = 1
@@ -439,7 +439,7 @@ set min_check = 1050
 set max_check = 1900
 set rssi_channel = 0
 set rssi_src_frame_errors = OFF
-set rssi_scale = 100
+set rssi_scale = 200
 set rssi_offset = 0
 set rssi_invert = OFF
 set rc_interp = AUTO
@@ -480,7 +480,7 @@ set motor_poles = 14
 set thr_corr_value = 0
 set thr_corr_angle = 800
 set failsafe_delay = 4
-set failsafe_off_delay = 10
+set failsafe_off_delay = 100
 set failsafe_throttle = 1200
 set failsafe_switch_mode = STAGE2
 set failsafe_throttle_low_delay = 100
@@ -600,7 +600,7 @@ set osd_ah_max_pit = 20
 set osd_ah_max_rol = 40
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 2120
+set osd_vbat_pos = 2121
 set osd_rssi_pos = 2145
 set osd_tim_1_pos = 234
 set osd_tim_2_pos = 234
@@ -611,15 +611,15 @@ set osd_g_force_pos = 2521
 set osd_throttle_pos = 2113
 set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 237
-set osd_ah_sbar_pos = 2286
+set osd_ah_sbar_pos = 238
 set osd_ah_pos = 142
-set osd_current_pos = 2102
-set osd_mah_drawn_pos = 2126
-set osd_craft_name_pos = 2091
+set osd_current_pos = 2134
+set osd_mah_drawn_pos = 2127
+set osd_craft_name_pos = 2090
 set osd_gps_speed_pos = 234
 set osd_gps_lon_pos = 2048
 set osd_gps_lat_pos = 2065
-set osd_gps_sats_pos = 234
+set osd_gps_sats_pos = 2060
 set osd_home_dir_pos = 2497
 set osd_home_dist_pos = 2498
 set osd_compass_bar_pos = 42
@@ -638,8 +638,8 @@ set osd_battery_usage_pos = 234
 set osd_disarmed_pos = 234
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
-set osd_esc_tmp_pos = 2201
-set osd_esc_rpm_pos = 2135
+set osd_esc_tmp_pos = 153
+set osd_esc_rpm_pos = 2167
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_core_temp_pos = 234
