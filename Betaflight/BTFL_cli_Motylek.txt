@@ -158,6 +158,7 @@ feature -SOFTSPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
+feature INFLIGHT_ACC_CAL
 feature RX_SERIAL
 feature SOFTSERIAL
 feature GPS
@@ -203,9 +204,9 @@ map TAER1234
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 0 115200 57600 0 115200
+serial 0 2 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 2 2 115200 57600 0 115200
+serial 2 2048 115200 57600 0 115200
 serial 3 16384 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
@@ -470,7 +471,7 @@ set blackbox_mode = NORMAL
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
-set dshot_idle_value = 450
+set dshot_idle_value = 200
 set dshot_burst = ON
 set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT1200
@@ -513,7 +514,7 @@ set beeper_inversion = ON
 set beeper_od = OFF
 set beeper_frequency = 0
 set beeper_dshot_beacon_tone = 1
-set yaw_motors_reversed = OFF
+set yaw_motors_reversed = ON
 set crashflip_motor_percent = 0
 set 3d_deadband_low = 1406
 set 3d_deadband_high = 1514
