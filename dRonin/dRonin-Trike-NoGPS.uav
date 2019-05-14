@@ -110,14 +110,14 @@
             <field name="Uart3" values="S.Bus"/>
             <field name="Uart4" values="Disabled"/>
             <field name="Uart5" values="DShot ESC Telemetry"/>
-            <field name="Uart6" values="GPS"/>
+            <field name="Uart6" values="Disabled"/>
             <field name="OSDPort" values="MAX7456 OSD"/>
             <field name="USB_HIDPort" values="USBTelemetry"/>
             <field name="USB_VCPPort" values="Disabled"/>
             <field name="DSMxMode" values="Autodetect"/>
-            <field name="ExtMag" values="External HMC5883"/>
+            <field name="ExtMag" values="None"/>
             <field name="ExtMagOrientation" values="Top0degCW"/>
-            <field name="Uart4RxPad" values="Uart4Rx"/>
+            <field name="Uart4RxPad" values="Fdbk2"/>
         </object>
         <object id="0xE2DBC224" name="INSSettings">
             <field name="AccelVar" values="0.003000000026077032,0.003000000026077032,0.003000000026077032"/>
@@ -165,7 +165,7 @@
             <field name="Stabilization2Thrust" values="Direct"/>
             <field name="Stabilization3Thrust" values="Direct"/>
             <field name="FlightModeNumber" values="5"/>
-            <field name="FlightModePosition" values="Horizon,ReturnToHome,Leveling,PositionHold,ServoCal,Manual"/>
+            <field name="FlightModePosition" values="Horizon,ServoCal,Leveling,Autotune,Acro,Manual"/>
         </object>
         <object id="0xB8E9BE08" name="MixerSettings">
             <field name="ThrottleCurve2" values="0,0.22499999403953552,0.44999998807907104,0.6749999523162842,0.8999999761581421"/>
@@ -192,7 +192,7 @@
             <field name="Mixer10Type" values="Disabled"/>
         </object>
         <object id="0xFECECBDC" name="ModuleSettings">
-            <field name="AdminState" values="Disabled,Enabled,Enabled,Disabled,Disabled,Disabled,Disabled,Disabled,Enabled,Disabled,Disabled,Enabled,Enabled,Disabled"/>
+            <field name="AdminState" values="Disabled,Enabled,Enabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Disabled,Enabled,Enabled,Disabled"/>
             <field name="TelemetrySpeed" values="115200"/>
             <field name="GPSSpeed" values="57600"/>
             <field name="GPSDataProtocol" values="UBX"/>
