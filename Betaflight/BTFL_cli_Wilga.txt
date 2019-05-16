@@ -1,4 +1,4 @@
-dump
+# dump
 # Betaflight / NAZE (AFNA) 3.2.5 Feb 11 2018 / 00:40:11 (6e69ff00c) MSP API: 1.36
 name Wilga
 resource BEEPER 1 A12
@@ -252,13 +252,13 @@ mode_color 6 9 0
 mode_color 6 10 0
 mode_color 7 0 3
 aux 0 0 0 1700 2100
-aux 1 1 1 1700 2100
-aux 2 2 1 900 1700
-aux 3 13 2 1300 2100
-aux 4 27 2 1700 2100
-aux 5 28 1 1300 2100
-aux 6 0 0 900 900
-aux 7 0 0 900 900
+aux 1 2 1 900 1300
+aux 2 2 1 1700 2100
+aux 3 3 255 1700 2100
+aux 4 12 1 1300 1700
+aux 5 13 2 1300 2100
+aux 6 27 2 1700 2100
+aux 7 28 1 1300 2100
 aux 8 0 0 900 900
 aux 9 0 0 900 900
 aux 10 0 0 900 900
