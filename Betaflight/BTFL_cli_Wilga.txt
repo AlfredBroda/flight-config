@@ -3,18 +3,18 @@
 name Wilga
 resource BEEPER 1 A12
 resource MOTOR 1 A08
-resource MOTOR 2 NONE
+resource MOTOR 2 A11
 resource MOTOR 3 NONE
 resource MOTOR 4 NONE
 resource MOTOR 5 NONE
 resource MOTOR 6 NONE
 resource MOTOR 7 NONE
 resource MOTOR 8 NONE
-resource SERVO 1 A11
-resource SERVO 2 B06
-resource SERVO 3 B07
-resource SERVO 4 B08
-resource SERVO 5 B09
+resource SERVO 1 B06
+resource SERVO 2 B07
+resource SERVO 3 B08
+resource SERVO 4 B09
+resource SERVO 5 NONE
 resource SERVO 6 NONE
 resource SERVO 7 NONE
 resource SERVO 8 NONE
@@ -89,10 +89,10 @@ mmix reset
 mmix 0  1.000  0.000  0.000  0.000
 servo 0 1000 2000 1500 100 -1
 servo 1 1000 2000 1500 100 -1
-servo 2 1000 2000 1500 100 -1
-servo 3 1000 2000 1500 100 -1
+servo 2 1000 2000 1500 -100 -1
+servo 3 1000 2000 1500 -100 -1
 servo 4 1000 2000 1500 100 -1
-servo 5 1000 2000 1500 100 -1
+servo 5 1000 2000 1500 100 8
 servo 6 1000 2000 1500 100 -1
 servo 7 1000 2000 1500 100 -1
 smix reset
@@ -127,6 +127,7 @@ feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
+feature SERVO_TILT
 feature SOFTSERIAL
 feature TELEMETRY
 beeper GYRO_CALIBRATED
@@ -255,7 +256,7 @@ aux 2 2 1 1700 2100
 aux 3 3 1 1700 2100
 aux 4 12 1 1300 1700
 aux 5 13 2 1300 2100
-aux 6 27 2 1700 2100
+aux 6 27 3 1700 2100
 aux 7 28 1 1300 2100
 aux 8 0 0 900 900
 aux 9 0 0 900 900
