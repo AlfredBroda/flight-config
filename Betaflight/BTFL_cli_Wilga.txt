@@ -127,10 +127,8 @@ feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
-feature MOTOR_STOP
 feature SOFTSERIAL
 feature TELEMETRY
-feature CHANNEL_FORWARDING
 beeper GYRO_CALIBRATED
 beeper RX_LOST
 beeper RX_LOST_LANDING
@@ -254,7 +252,7 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100
 aux 1 2 1 900 1300
 aux 2 2 1 1700 2100
-aux 3 3 255 1700 2100
+aux 3 3 1 1700 2100
 aux 4 12 1 1300 1700
 aux 5 13 2 1300 2100
 aux 6 27 2 1700 2100
@@ -296,7 +294,7 @@ rxfail 2 a
 rxfail 3 a
 rxfail 4 h
 rxfail 5 h
-rxfail 6 s 1500
+rxfail 6 s 2000
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -308,7 +306,7 @@ rxfail 14 h
 rxfail 15 h
 rxfail 16 h
 rxfail 17 h
-set align_gyro = DEFAULT
+set align_gyro = CW0FLIP
 set gyro_lpf = OFF
 set gyro_sync_denom = 8
 set gyro_lowpass_type = PT1
@@ -319,7 +317,7 @@ set gyro_notch2_hz = 200
 set gyro_notch2_cutoff = 100
 set moron_threshold = 48
 set gyro_use_32khz = OFF
-set align_acc = DEFAULT
+set align_acc = CW0FLIP
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
@@ -357,7 +355,7 @@ set blackbox_record_acc = ON
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
-set use_unsynced_pwm = OFF
+set use_unsynced_pwm = ON
 set motor_pwm_protocol = OFF
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
@@ -365,7 +363,7 @@ set thr_corr_value = 0
 set thr_corr_angle = 800
 set failsafe_delay = 4
 set failsafe_off_delay = 10
-set failsafe_throttle = 1300
+set failsafe_throttle = 1100
 set failsafe_kill_switch = OFF
 set failsafe_throttle_low_delay = 100
 set failsafe_procedure = AUTO-LAND
