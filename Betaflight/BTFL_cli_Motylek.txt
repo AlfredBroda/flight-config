@@ -1,4 +1,4 @@
-dump
+# dump
 
 # version
 # Betaflight / MATEKF405 (MKF4) 3.5.7 Mar 15 2019 / 22:04:47 (e9130527c) MSP API: 1.40
@@ -158,7 +158,6 @@ feature -SOFTSPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
-feature INFLIGHT_ACC_CAL
 feature RX_SERIAL
 feature SOFTSERIAL
 feature GPS
@@ -196,8 +195,8 @@ beeper CAM_CONNECTION_CLOSED
 beeper RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon -RX_LOST
-beacon -RX_SET
+beacon RX_LOST
+beacon RX_SET
 
 # map
 map TAER1234
@@ -207,7 +206,7 @@ serial 20 1 115200 57600 0 115200
 serial 0 2 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
 serial 2 2048 115200 57600 0 115200
-serial 3 16384 115200 57600 0 115200
+serial 3 0 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
 
@@ -317,13 +316,13 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1700 2100 0 0
 aux 2 2 1 900 1700 0 0
-aux 3 5 1 1300 1700 0 0
-aux 4 27 2 1700 2100 0 0
-aux 5 13 2 1300 2100 0 0
-aux 6 19 3 1150 1400 0 0
-aux 7 26 0 1700 2100 0 0
-aux 8 33 3 1150 1350 0 0
-aux 9 34 3 1650 1850 0 0
+aux 3 27 2 1700 2100 0 0
+aux 4 13 2 1300 2100 0 0
+aux 5 19 3 1150 1400 0 0
+aux 6 26 0 1700 2100 0 0
+aux 7 0 0 900 900 0 0
+aux 8 0 0 900 900 0 0
+aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
 aux 11 0 0 900 900 0 0
 aux 12 0 0 900 900 0 0
@@ -663,11 +662,11 @@ set debug_mode = NONE
 set rate_6pos_switch = OFF
 set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
-set vtx_band = 4
+set vtx_band = 5
 set vtx_channel = 1
 set vtx_power = 1
 set vtx_low_power_disarm = OFF
-set vtx_freq = 5740
+set vtx_freq = 5658
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
 set vcd_video_system = PAL
