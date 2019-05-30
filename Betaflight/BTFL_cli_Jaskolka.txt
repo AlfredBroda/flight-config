@@ -219,13 +219,13 @@ feature -SOFTSPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
-feature INFLIGHT_ACC_CAL
 feature RX_SERIAL
 feature SOFTSERIAL
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
 feature AIRMODE
+feature ESC_SENSOR
 feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
 
@@ -256,8 +256,8 @@ beeper CAM_CONNECTION_CLOSE
 beeper RC_SMOOTHING_INIT_FAIL
 
 # beacon
-beacon -RX_LOST
-beacon -RX_SET
+beacon RX_LOST
+beacon RX_SET
 
 # map
 map TAER1234
@@ -267,7 +267,7 @@ serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
 serial 2 2048 115200 57600 0 115200
-serial 3 0 115200 57600 0 115200
+serial 3 16384 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
 
@@ -377,13 +377,13 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1700 2100 0 0
 aux 2 2 1 900 1700 0 0
-aux 3 5 1 1300 1700 0 0
-aux 4 27 2 1700 2100 0 0
-aux 5 13 2 1300 2100 0 0
-aux 6 19 3 1150 1400 0 0
-aux 7 26 0 1700 2100 0 0
-aux 8 33 3 1150 1350 0 0
-aux 9 34 3 1650 1850 0 0
+aux 3 27 2 1700 2100 0 0
+aux 4 13 2 1300 2100 0 0
+aux 5 19 3 1150 1400 0 0
+aux 6 26 0 1700 2100 0 0
+aux 7 33 3 1150 1800 0 0
+aux 8 34 3 1550 1800 0 0
+aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
 aux 11 0 0 900 900 0 0
 aux 12 0 0 900 900 0 0
@@ -452,7 +452,7 @@ rxfail 2 a
 rxfail 3 a
 rxfail 4 h
 rxfail 5 s 1500
-rxfail 6 s 2000
+rxfail 6 h
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -497,7 +497,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -26,-16,-190
+set acc_calibration = 4,119,-185
 set align_mag = DEFAULT
 set mag_bustype = I2C
 set mag_i2c_device = 1
@@ -566,10 +566,10 @@ set thr_corr_value = 0
 set thr_corr_angle = 800
 set failsafe_delay = 4
 set failsafe_off_delay = 10
-set failsafe_throttle = 1000
+set failsafe_throttle = 1300
 set failsafe_switch_mode = STAGE1
 set failsafe_throttle_low_delay = 100
-set failsafe_procedure = DROP
+set failsafe_procedure = AUTO-LAND
 set align_board_roll = 0
 set align_board_pitch = 0
 set align_board_yaw = 0
@@ -727,34 +727,34 @@ set osd_ah_max_rol = 40
 set osd_ah_invert = OFF
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 2121
-set osd_rssi_pos = 2145
+set osd_vbat_pos = 14378
+set osd_rssi_pos = 14400
 set osd_link_quality_pos = 234
-set osd_tim_1_pos = 234
-set osd_tim_2_pos = 234
-set osd_remaining_time_estimate_pos = 2508
-set osd_flymode_pos = 2465
-set osd_anti_gravity_pos = 234
-set osd_g_force_pos = 2521
-set osd_throttle_pos = 2113
+set osd_tim_1_pos = 459
+set osd_tim_2_pos = 14796
+set osd_remaining_time_estimate_pos = 4556
+set osd_flymode_pos = 6561
+set osd_anti_gravity_pos = 2282
+set osd_g_force_pos = 2497
+set osd_throttle_pos = 6521
 set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 237
 set osd_ah_sbar_pos = 238
 set osd_ah_pos = 142
-set osd_current_pos = 2134
-set osd_mah_drawn_pos = 2127
+set osd_current_pos = 6231
+set osd_mah_drawn_pos = 6192
 set osd_motor_diag_pos = 234
-set osd_craft_name_pos = 2090
+set osd_craft_name_pos = 2059
 set osd_display_name_pos = 234
-set osd_gps_speed_pos = 234
-set osd_gps_lon_pos = 2048
-set osd_gps_lat_pos = 2065
-set osd_gps_sats_pos = 2060
-set osd_home_dir_pos = 2497
-set osd_home_dist_pos = 2498
+set osd_gps_speed_pos = 4330
+set osd_gps_lon_pos = 4096
+set osd_gps_lat_pos = 4113
+set osd_gps_sats_pos = 4545
+set osd_home_dir_pos = 6240
+set osd_home_dist_pos = 6241
 set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 42
-set osd_altitude_pos = 2486
+set osd_altitude_pos = 6263
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
@@ -770,7 +770,7 @@ set osd_disarmed_pos = 234
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
 set osd_esc_tmp_pos = 153
-set osd_esc_rpm_pos = 2167
+set osd_esc_rpm_pos = 2457
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
 set osd_flip_arrow_pos = 234
