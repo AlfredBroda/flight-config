@@ -79,6 +79,7 @@ feature TX_PROF_SEL
 feature BAT_PROF_AUTOSWITCH
 feature MOTOR_STOP
 feature SOFTSERIAL
+feature GPS
 feature TELEMETRY
 feature CURRENT_METER
 feature BLACKBOX
@@ -225,21 +226,21 @@ mode_color 6 10 0
 
 # aux
 aux 0 0 0 1700 2100
-aux 1 2 1 900 1700
-aux 2 20 1 1300 2100
-aux 3 4 1 1700 2100
-aux 4 7 1 1300 1700
-aux 5 3 2 1300 1700
-aux 6 9 2 1300 1700
-aux 7 8 2 1700 2100
-aux 8 11 4 1300 2100
-aux 9 17 0 1700 2100
-aux 10 18 4 1700 2100
-aux 11 0 0 900 900
-aux 12 0 0 900 900
-aux 13 0 0 900 900
-aux 14 0 0 900 900
-aux 15 0 0 900 900
+aux 1 2 3 900 1300
+aux 2 2 3 1700 2100
+aux 3 20 3 1300 2100
+aux 4 4 3 1700 2100
+aux 5 7 2 1300 2100
+aux 6 3 2 1300 1700
+aux 7 9 2 1300 1700
+aux 8 8 2 1700 2100
+aux 9 19 4 1700 2100
+aux 10 22 5 1300 1700
+aux 11 35 4 1300 1700
+aux 12 14 6 1300 1700
+aux 13 11 1 1300 2100
+aux 14 17 0 1700 2100
+aux 15 18 1 1700 2100
 aux 16 0 0 900 900
 aux 17 0 0 900 900
 aux 18 0 0 900 900
@@ -801,9 +802,9 @@ set align_opflow = CW0FLIP
 set align_mag = CW270FLIP
 set mag_hardware = QMC5883
 set mag_declination = 0
-set magzero_x = 0
-set magzero_y = 0
-set magzero_z = 0
+set magzero_x = -125
+set magzero_y = 180
+set magzero_z = -52
 set mag_calibration_time = 30
 set align_mag_roll = 0
 set align_mag_pitch = 0
@@ -845,7 +846,7 @@ set failsafe_recovery_delay = 5
 set failsafe_off_delay = 200
 set failsafe_throttle = 1000
 set failsafe_throttle_low_delay = 0
-set failsafe_procedure = SET-THR
+set failsafe_procedure = RTH
 set failsafe_stick_threshold = 50
 set failsafe_fw_roll_angle = -200
 set failsafe_fw_pitch_angle = 100
@@ -1004,7 +1005,7 @@ set frsky_vfas_precision = 0
 set frsky_pitch_roll = OFF
 set report_cell_voltage = OFF
 set hott_alarm_sound_interval = 5
-set telemetry_uart_unidir = OFF
+set telemetry_uart_unidir = ON
 set smartport_fuel_unit = MAH
 set ibus_telemetry_type = 0
 set ltm_update_rate = NORMAL
