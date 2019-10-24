@@ -1,4 +1,4 @@
-#dump
+# dump
 
 # version
 # INAV/MATEKF405SE 2.2.1 Jul  3 2019 / 22:48:46 (a6d847482)
@@ -117,7 +117,7 @@ serial 20 1 115200 115200 0 115200
 serial 0 1 115200 115200 0 115200
 serial 1 64 115200 115200 0 115200
 serial 2 0 115200 115200 0 115200
-serial 3 0 115200 115200 0 115200
+serial 3 2 115200 115200 0 115200
 serial 4 0 115200 115200 0 115200
 serial 5 0 115200 115200 0 115200
 serial 30 32 115200 115200 0 115200
@@ -787,12 +787,12 @@ set align_acc = DEFAULT
 set acc_hardware = MPU6000
 set acc_lpf_hz = 15
 set acc_lpf_type = BIQUAD
-set acczero_x = 0
-set acczero_y = 0
-set acczero_z = 0
-set accgain_x = 4096
-set accgain_y = 4096
-set accgain_z = 4096
+set acczero_x = 59
+set acczero_y = -15
+set acczero_z = -396
+set accgain_x = 4053
+set accgain_y = 4098
+set accgain_z = 4034
 set rangefinder_hardware = NONE
 set rangefinder_median_filter = OFF
 set opflow_hardware = NONE
@@ -817,7 +817,7 @@ set pitot_scale =  1.000
 set receiver_type = SERIAL
 set min_check = 1100
 set max_check = 1900
-set rssi_channel = 0
+set rssi_channel = 16
 set rssi_min = 0
 set rssi_max = 100
 set sbus_sync_interval = 3000
@@ -855,7 +855,7 @@ set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
 set align_board_roll = 0
 set align_board_pitch = 0
-set align_board_yaw = 0
+set align_board_yaw = 1800
 set vbat_scale = 1100
 set current_meter_scale = 317
 set current_meter_offset = 0
@@ -995,7 +995,7 @@ set nav_fw_launch_climb_angle = 18
 set nav_fw_cruise_yaw_rate = 20
 set nav_fw_allow_manual_thr_increase = OFF
 set telemetry_switch = OFF
-set telemetry_inverted = OFF
+set telemetry_inverted = ON
 set frsky_default_latitude =  0.000
 set frsky_default_longitude =  0.000
 set frsky_coordinates_format = 0
