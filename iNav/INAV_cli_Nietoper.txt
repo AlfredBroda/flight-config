@@ -996,7 +996,7 @@ set nav_fw_launch_climb_angle = 18
 set nav_fw_cruise_yaw_rate = 20
 set nav_fw_allow_manual_thr_increase = OFF
 set telemetry_switch = OFF
-set telemetry_inverted = ON
+set telemetry_inverted = OFF
 set frsky_default_latitude =  0.000
 set frsky_default_longitude =  0.000
 set frsky_coordinates_format = 0
@@ -1005,7 +1005,7 @@ set frsky_vfas_precision = 0
 set frsky_pitch_roll = OFF
 set report_cell_voltage = OFF
 set hott_alarm_sound_interval = 5
-set telemetry_uart_unidir = ON
+set telemetry_uart_unidir = OFF
 set smartport_fuel_unit = MAH
 set ibus_telemetry_type = 0
 set ltm_update_rate = NORMAL
@@ -1175,10 +1175,10 @@ set fpv_mix_degrees = 0
 # battery_profile
 battery_profile 1
 
-set bat_cells = 0
+set bat_cells = 3
 set vbat_cell_detect_voltage = 430
 set vbat_max_cell_voltage = 420
-set vbat_min_cell_voltage = 330
+set vbat_min_cell_voltage = 300
 set vbat_warning_cell_voltage = 350
 set battery_capacity = 2200
 set battery_capacity_warning = 440
