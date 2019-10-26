@@ -84,6 +84,7 @@ feature TELEMETRY
 feature CURRENT_METER
 feature LED_STRIP
 feature BLACKBOX
+feature AIRMODE
 feature PWM_OUTPUT_ENABLE
 feature OSD
 
@@ -873,9 +874,9 @@ set platform_type = AIRPLANE
 set has_flaps = OFF
 set model_preview_type = 8
 set fw_min_throttle_down_pitch = 0
-set 3d_deadband_low = 1406
+set 3d_deadband_low = 1425
 set 3d_deadband_high = 1514
-set 3d_neutral = 1460
+set 3d_neutral = 1475
 set servo_center_pulse = 1500
 set servo_pwm_rate = 50
 set servo_lpf_hz = 20
@@ -1067,7 +1068,7 @@ set osd_plus_code_digits = 11
 set i2c_speed = 400KHZ
 set debug_mode = NONE
 set throttle_tilt_comp_str = 0
-set name = Nietoper
+set name = Wron
 set mode_range_logic_operator = OR
 set stats = OFF
 set stats_total_time = 0
@@ -1181,8 +1182,20 @@ set vbat_cell_detect_voltage = 430
 set vbat_max_cell_voltage = 420
 set vbat_min_cell_voltage = 300
 set vbat_warning_cell_voltage = 350
+set battery_capacity = 3000
+set battery_capacity_warning = 450
+set battery_capacity_critical = 240
+set battery_capacity_unit = MAH
+
+battery_profile 2
+
+set bat_cells = 3
+set vbat_cell_detect_voltage = 430
+set vbat_max_cell_voltage = 420
+set vbat_min_cell_voltage = 330
+set vbat_warning_cell_voltage = 350
 set battery_capacity = 2200
-set battery_capacity_warning = 440
+set battery_capacity_warning = 660
 set battery_capacity_critical = 220
 set battery_capacity_unit = MAH
 
