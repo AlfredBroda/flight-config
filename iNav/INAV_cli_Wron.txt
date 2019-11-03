@@ -24,8 +24,8 @@ smix 3 4 1 50 0 -1
 servo 0 1000 2000 1500 100
 servo 1 1000 2000 1500 100
 servo 2 1000 2000 1500 100
-servo 3 1000 2000 1500 100
-servo 4 1000 2000 1500 -100
+servo 3 1000 2000 1538 -100
+servo 4 1000 2000 1492 100
 servo 5 1000 2000 1500 100
 servo 6 1000 2000 1500 100
 servo 7 1000 2000 1500 100
@@ -126,14 +126,14 @@ serial 5 0 115200 115200 0 115200
 serial 30 32 115200 115200 0 115200
 
 # led
-led 0 11,7::CB:5
-led 1 10,7::C:5
+led 0 11,7::C:5
+led 1 10,7::CB:5
 led 2 9,7::CO:3
 led 3 8,7::CO:3
 led 4 7,7::CO:3
 led 5 6,7::CO:3
-led 6 5,7::C:2
-led 7 4,7::CB:2
+led 6 5,7::CB:2
+led 7 4,7::C:2
 led 8 0,0::C:0
 led 9 0,0::C:0
 led 10 0,0::C:0
@@ -856,10 +856,10 @@ set failsafe_fw_yaw_rate = -45
 set failsafe_min_distance = 0
 set failsafe_min_distance_procedure = DROP
 set failsafe_mission = ON
-set align_board_roll = 0
-set align_board_pitch = 0
+set align_board_roll = -8
+set align_board_pitch = -4
 set align_board_yaw = 1800
-set vbat_scale = 1100
+set vbat_scale = 1109
 set current_meter_scale = 317
 set current_meter_offset = 0
 set current_meter_type = ADC
