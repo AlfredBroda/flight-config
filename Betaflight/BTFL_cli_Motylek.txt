@@ -427,13 +427,13 @@ aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1700 2100 0 0
 aux 2 2 1 900 1300 0 0
 aux 3 6 1 1300 1700 0 0
-aux 4 8 2 1300 1700 0 0
-aux 5 8 0 900 900 0 6
-aux 6 13 2 1700 2100 0 0
-aux 7 15 2 900 1300 0 0
-aux 8 26 0 1700 2100 0 0
-aux 9 0 0 900 900 0 0
-aux 10 0 0 900 900 0 0
+aux 4 46 2 1700 2100 0 0
+aux 5 8 2 1300 1700 0 0
+aux 6 8 0 900 900 0 6
+aux 7 8 0 900 900 0 46
+aux 8 13 2 1700 2100 0 0
+aux 9 15 2 900 1300 0 0
+aux 10 26 0 1700 2100 0 0
 aux 11 0 0 900 900 0 0
 aux 12 0 0 900 900 0 0
 aux 13 0 0 900 900 0 0
@@ -634,7 +634,7 @@ set failsafe_off_delay = 100
 set failsafe_throttle = 1200
 set failsafe_switch_mode = STAGE2
 set failsafe_throttle_low_delay = 100
-set failsafe_procedure = AUTO-LAND
+set failsafe_procedure = GPS-RESCUE
 set failsafe_recovery_delay = 20
 set failsafe_stick_threshold = 30
 set align_board_roll = 0
@@ -723,7 +723,7 @@ set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_ON
 set gps_rescue_min_sats = 8
 set gps_rescue_min_dth = 100
-set gps_rescue_allow_arming_without_fix = OFF
+set gps_rescue_allow_arming_without_fix = ON
 set gps_rescue_alt_mode = MAX_ALT
 set gps_rescue_use_mag = ON
 set deadband = 5
