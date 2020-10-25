@@ -10,8 +10,7 @@ batch start
 board_name MATEKF405
 manufacturer_id MTKS
 
-# name
-name Jaskolka
+# name: Jaskolka
 
 # resources
 resource BEEPER 1 C13
@@ -269,6 +268,7 @@ feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
 feature SOFTSERIAL
+feature GPS
 feature TELEMETRY
 feature LED_STRIP
 feature OSD
@@ -314,7 +314,7 @@ map TAER1234
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2 115200 57600 0 115200
 serial 3 1 115200 57600 0 115200
 serial 4 1024 115200 57600 0 115200
 serial 30 64 115200 57600 0 115200
@@ -425,12 +425,12 @@ mode_color 7 0 3
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1300 1700 0 0
 aux 2 2 1 900 1300 0 0
-aux 3 27 2 1700 2100 0 0
+aux 3 46 2 1700 2100 0 0
 aux 4 13 2 1300 2100 0 0
-aux 5 15 2 900 1300 0 0
-aux 6 19 3 1150 1400 0 0
-aux 7 26 0 1700 2100 0 0
-aux 8 0 0 900 900 0 0
+aux 5 13 0 900 900 0 46
+aux 6 15 2 900 1300 0 0
+aux 7 19 3 1150 1400 0 0
+aux 8 26 0 1700 2100 0 0
 aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
 aux 11 0 0 900 900 0 0
@@ -633,7 +633,7 @@ set failsafe_off_delay = 10
 set failsafe_throttle = 1300
 set failsafe_switch_mode = STAGE1
 set failsafe_throttle_low_delay = 100
-set failsafe_procedure = AUTO-LAND
+set failsafe_procedure = GPS-RESCUE
 set failsafe_recovery_delay = 20
 set failsafe_stick_threshold = 30
 set align_board_roll = 0
@@ -692,21 +692,21 @@ set imu_dcm_ki = 0
 set small_angle = 25
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
-set gps_provider = NMEA
+set gps_provider = UBLOX
 set gps_sbas_mode = AUTO
 set gps_sbas_integrity = OFF
 set gps_auto_config = ON
 set gps_auto_baud = OFF
 set gps_ublox_use_galileo = OFF
 set gps_ublox_mode = AIRBORNE
-set gps_set_home_point_once = OFF
+set gps_set_home_point_once = ON
 set gps_use_3d_speed = OFF
 set gps_rescue_angle = 32
 set gps_rescue_initial_alt = 50
 set gps_rescue_descent_dist = 200
 set gps_rescue_landing_alt = 5
 set gps_rescue_landing_dist = 10
-set gps_rescue_ground_speed = 2000
+set gps_rescue_ground_speed = 1100
 set gps_rescue_throttle_p = 150
 set gps_rescue_throttle_i = 20
 set gps_rescue_throttle_d = 50
@@ -716,14 +716,14 @@ set gps_rescue_velocity_d = 15
 set gps_rescue_yaw_p = 40
 set gps_rescue_throttle_min = 1200
 set gps_rescue_throttle_max = 1600
-set gps_rescue_ascend_rate = 500
+set gps_rescue_ascend_rate = 1268
 set gps_rescue_descend_rate = 150
 set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_ON
 set gps_rescue_min_sats = 8
 set gps_rescue_min_dth = 100
-set gps_rescue_allow_arming_without_fix = OFF
-set gps_rescue_alt_mode = MAX_ALT
+set gps_rescue_allow_arming_without_fix = ON
+set gps_rescue_alt_mode = FIXED_ALT
 set gps_rescue_use_mag = ON
 set deadband = 0
 set yaw_deadband = 0
@@ -826,7 +826,7 @@ set osd_remaining_time_estimate_pos = 4556
 set osd_flymode_pos = 6561
 set osd_anti_gravity_pos = 2486
 set osd_g_force_pos = 2497
-set osd_throttle_pos = 6521
+set osd_throttle_pos = 4343
 set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 237
 set osd_ah_sbar_pos = 238
@@ -837,14 +837,14 @@ set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 2059
 set osd_display_name_pos = 234
 set osd_gps_speed_pos = 4330
-set osd_gps_lon_pos = 4096
-set osd_gps_lat_pos = 4113
-set osd_gps_sats_pos = 4545
-set osd_home_dir_pos = 6240
-set osd_home_dist_pos = 6241
+set osd_gps_lon_pos = 6632
+set osd_gps_lat_pos = 6636
+set osd_gps_sats_pos = 6529
+set osd_home_dir_pos = 6528
+set osd_home_dist_pos = 6496
 set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 42
-set osd_altitude_pos = 6272
+set osd_altitude_pos = 6464
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
@@ -860,7 +860,7 @@ set osd_disarmed_pos = 234
 set osd_nheading_pos = 234
 set osd_nvario_pos = 234
 set osd_esc_tmp_pos = 153
-set osd_esc_rpm_pos = 2457
+set osd_esc_rpm_pos = 2073
 set osd_esc_rpm_freq_pos = 234
 set osd_rtc_date_time_pos = 234
 set osd_adjustment_range_pos = 234
