@@ -1,4 +1,4 @@
-# dump
+dump
 
 # version
 # Betaflight / STM32F405 (S405) 4.2.3 Sep 20 2020 / 20:42:51 (2696b7c88) MSP API: 1.43
@@ -507,8 +507,8 @@ rxfail 1 a
 rxfail 2 a
 rxfail 3 a
 rxfail 4 h
-rxfail 5 s 1500
-rxfail 6 s 2000
+rxfail 5 h
+rxfail 6 h
 rxfail 7 h
 rxfail 8 h
 rxfail 9 h
@@ -1137,4 +1137,4 @@ set yaw_rate_limit = 1998
 # end the command batch
 batch end
 
-#
+# 
