@@ -1,3 +1,5 @@
+# 
+
 # dump
 
 # version
@@ -725,8 +727,8 @@ set gps_rescue_min_dth = 100
 set gps_rescue_allow_arming_without_fix = ON
 set gps_rescue_alt_mode = FIXED_ALT
 set gps_rescue_use_mag = ON
-set deadband = 0
-set yaw_deadband = 0
+set deadband = 2
+set yaw_deadband = 2
 set yaw_control_reversed = OFF
 set pid_process_denom = 4
 set runaway_takeoff_prevention = ON
@@ -911,7 +913,7 @@ set osd_camera_frame_width = 24
 set osd_camera_frame_height = 11
 set system_hse_mhz = 8
 set task_statistics = ON
-set debug_mode = NONE
+set debug_mode = GYRO_SCALED
 set rate_6pos_switch = OFF
 set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
