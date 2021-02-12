@@ -6,7 +6,7 @@ name Smok
 resource BEEPER 1 A00
 resource MOTOR 1 A07
 resource MOTOR 2 A08
-resource MOTOR 3 NONE
+resource MOTOR 3 A01
 resource MOTOR 4 NONE
 resource MOTOR 5 NONE
 resource MOTOR 6 NONE
@@ -20,7 +20,7 @@ resource SERVO 5 NONE
 resource SERVO 6 NONE
 resource SERVO 7 NONE
 resource SERVO 8 NONE
-resource PPM 1 A01
+resource PPM 1 NONE
 resource PWM 1 NONE
 resource PWM 2 NONE
 resource PWM 3 NONE
@@ -94,6 +94,7 @@ mmix reset
 
 mmix 0  1.000  1.000  0.000  0.000
 mmix 1  1.000 -1.000  0.000  0.000
+mmix 2  1.000  0.000  1.000  0.000
 servo 0 1000 2000 1500 100 -1
 servo 1 1000 2000 1500 100 -1
 servo 2 1000 2000 1540 100 -1
@@ -133,7 +134,9 @@ feature -SOFTSPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
+feature INFLIGHT_ACC_CAL
 feature RX_SERIAL
+feature TELEMETRY
 feature AIRMODE
 feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
