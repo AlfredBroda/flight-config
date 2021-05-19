@@ -29,7 +29,6 @@ resource FLASH_CS 1 C00
 # feature
 feature -SOFTSERIAL
 feature GPS
-feature LED_STRIP
 feature ESC_SENSOR
 
 # beacon
@@ -50,12 +49,11 @@ serial 4 1024 115200 57600 0 115200
 aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1300 1700 0 0
 aux 2 2 1 900 1300 0 0
-aux 3 46 2 1700 2100 0 0
+aux 3 46 3 1875 2100 0 0
 aux 4 13 2 1300 2100 0 0
 aux 5 13 0 900 900 0 46
-aux 6 15 2 900 1300 0 0
-aux 7 19 3 1150 1400 0 0
-aux 8 26 0 1700 2100 0 0
+aux 6 19 3 1150 1400 0 0
+aux 7 26 0 1700 2100 0 0
 
 # rxfail
 rxfail 5 s 1500
@@ -68,6 +66,8 @@ set dyn_notch_width_percent = 0
 set dyn_notch_q = 250
 set dyn_notch_min_hz = 125
 set dyn_notch_max_hz = 350
+set acc_trim_pitch = -8
+set acc_trim_roll = -4
 set acc_calibration = 4,119,-185,1
 set mag_hardware = AUTO
 set rssi_scale = 200
@@ -94,6 +94,8 @@ set deadband = 2
 set yaw_deadband = 2
 set pid_process_denom = 2
 set transient_throttle_limit = 15
+set ledstrip_race_color = GREEN
+set ledstrip_beacon_percent = 45
 set osd_warn_visual_beeper = OFF
 set osd_warn_crash_flip = OFF
 set osd_warn_core_temp = OFF
@@ -165,7 +167,7 @@ profile 1
 profile 2
 
 # restore original profile selection
-profile 1
+profile 2
 
 rateprofile 0
 
