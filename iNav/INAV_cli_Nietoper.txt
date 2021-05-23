@@ -83,8 +83,8 @@ aux 7 28 1 1350 1500
 aux 8 45 1 1200 1350
 aux 9 12 1 1500 1675
 aux 10 36 1 1950 2100
-aux 11 13 6 1300 2100
-aux 12 15 1 900 1100
+aux 11 13 6 1700 2100
+aux 12 15 6 900 1100
 aux 13 26 0 1700 2100
 
 # adjrange
@@ -151,6 +151,13 @@ set applied_defaults = 3
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set pos_hold_deadband = 20
+set nav_fw_launch_velocity = 150
+set nav_fw_launch_accel = 1500
+set nav_fw_launch_max_angle = 180
+set nav_fw_launch_thr = 1800
+set nav_fw_launch_idle_thr = 1300
+set nav_fw_launch_motor_delay = 100
+set nav_fw_launch_timeout = 10000
 set osd_video_system = PAL
 set i2c_speed = 800KHZ
 set name = Nietoper
