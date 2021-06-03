@@ -37,12 +37,14 @@ servo 4 1000 2000 1492 100
 # gf
 
 # feature
+feature -SOFTSERIAL
 feature BAT_PROF_AUTOSWITCH
 feature MOTOR_STOP
 feature GPS
 feature LED_STRIP
 feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
+feature FW_LAUNCH
 
 # beeper
 
@@ -111,11 +113,12 @@ osd_layout 0 21 4 14 V
 osd_layout 0 22 14 13 V
 osd_layout 0 23 15 13 V
 osd_layout 0 24 6 13 V
+osd_layout 0 25 23 5 V
 osd_layout 0 28 23 12 V
 osd_layout 0 30 1 11 V
 osd_layout 0 32 0 0 V
 osd_layout 0 33 25 6 V
-osd_layout 0 34 10 2 H
+osd_layout 0 34 10 0 V
 osd_layout 0 35 0 4 V
 osd_layout 0 41 26 7 V
 osd_layout 1 0 23 0 V
@@ -138,8 +141,9 @@ set magzero_x = -125
 set magzero_y = 180
 set magzero_z = -52
 set baro_hardware = BMP280
-set pitot_hardware = NONE
+set pitot_hardware = MS4525
 set serialrx_provider = CRSF
+set blackbox_rate_denom = 16
 set failsafe_procedure = RTH
 set align_board_yaw = 1800
 set model_preview_type = 8
@@ -149,7 +153,9 @@ set small_angle = 180
 set applied_defaults = 3
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
+set gps_ublox_use_galileo = ON
 set pos_hold_deadband = 20
+set nav_fw_cruise_speed = 400
 set nav_fw_launch_velocity = 150
 set nav_fw_launch_accel = 1500
 set nav_fw_launch_max_angle = 180
@@ -158,6 +164,10 @@ set nav_fw_launch_idle_thr = 1300
 set nav_fw_launch_motor_delay = 100
 set nav_fw_launch_timeout = 10000
 set osd_video_system = PAL
+set osd_time_alarm = 20
+set osd_alt_alarm = 120
+set osd_dist_alarm = 3000
+set osd_current_alarm = 40
 set i2c_speed = 800KHZ
 set name = Nietoper
 
