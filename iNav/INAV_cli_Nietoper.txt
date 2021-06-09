@@ -208,9 +208,9 @@ battery_profile 1
 
 set bat_cells = 3
 set vbat_min_cell_voltage = 300
-set battery_capacity = 3000
-set battery_capacity_warning = 450
-set battery_capacity_critical = 240
+set battery_capacity = 5000
+set battery_capacity_warning = 750
+set battery_capacity_critical = 400
 
 # battery_profile
 battery_profile 2
@@ -225,12 +225,12 @@ battery_profile 3
 
 set bat_cells = 4
 set battery_capacity = 2600
-set battery_capacity_warning = 450
-set battery_capacity_critical = 240
+set battery_capacity_warning = 442
+set battery_capacity_critical = 260
 
 # restore original profile selection
 profile 1
-battery_profile 1
+battery_profile 2
 
 # save configuration
 save
