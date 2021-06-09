@@ -124,7 +124,7 @@ osd_layout 1 0 23 0 V
 osd_layout 1 1 12 0 V
 
 # master
-set gyro_hardware_lpf = 98HZ
+set gyro_lpf_hz = 20
 set acc_hardware = MPU6000
 set acc_lpf_hz = 102
 set acczero_x = 59
@@ -148,11 +148,19 @@ set model_preview_type = 8
 set 3d_deadband_low = 1425
 set 3d_neutral = 1475
 set small_angle = 180
+set imu_acc_ignore_rate = 8
 set applied_defaults = 3
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
 set pos_hold_deadband = 20
+set nav_fw_min_thr = 1000
+set nav_fw_max_thr = 1800
+set nav_fw_bank_angle = 30
+set nav_fw_climb_angle = 25
+set nav_fw_dive_angle = 20
+set nav_fw_pitch2thr = 20
+set nav_fw_loiter_radius = 6000
 set nav_fw_cruise_speed = 400
 set nav_fw_launch_velocity = 150
 set nav_fw_launch_accel = 1500
@@ -172,9 +180,19 @@ set name = Nietoper
 # profile
 profile 1
 
+set fw_p_pitch = 3
+set fw_i_pitch = 10
+set fw_ff_pitch = 60
+set fw_p_roll = 3
+set fw_i_roll = 8
+set fw_ff_roll = 40
+set max_angle_inclination_rll = 450
 set heading_hold_rate_limit = 101
+set tpa_rate = 40
+set tpa_breakpoint = 1400
 set rc_yaw_expo = 70
-set roll_rate = 30
+set roll_rate = 28
+set pitch_rate = 12
 set yaw_rate = 10
 
 # profile
