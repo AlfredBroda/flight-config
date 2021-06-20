@@ -99,9 +99,27 @@ aux 10 26 0 900 1300
 #wp 0 invalid
 
 # osd_layout
-osd_layout 0 8 9 14 V
+osd_layout 0 0 27 0 V
+osd_layout 0 1 1 0 V
+osd_layout 0 4 8 6 V
+osd_layout 0 7 1 1 V
+osd_layout 0 8 14 14 V
+osd_layout 0 9 1 11 V
+osd_layout 0 11 1 6 V
+osd_layout 0 12 0 6 H
+osd_layout 0 13 8 13 V
+osd_layout 0 14 23 0 V
+osd_layout 0 15 7 14 V
+osd_layout 0 22 12 13 V
+osd_layout 0 23 13 13 V
+osd_layout 0 26 1 7 V
 osd_layout 0 27 24 2 V
-osd_layout 0 106 2 5 V
+osd_layout 0 28 23 11 H
+osd_layout 0 30 1 13 H
+osd_layout 0 39 1 12 V
+osd_layout 0 41 0 8 V
+osd_layout 0 42 0 9 V
+osd_layout 0 106 25 6 V
 
 # master
 set gyro_main_lpf_hz = 25
@@ -150,10 +168,12 @@ set nav_fw_launch_thr = 2000
 set nav_fw_launch_idle_thr = 1500
 set nav_fw_launch_motor_delay = 100
 set nav_fw_launch_timeout = 10000
+set osd_telemetry = ON
 set osd_time_alarm = 30
 set osd_dist_alarm = 12000
 set osd_current_alarm = 14
 set osd_link_quality_alarm = 50
+set osd_speed_source = AIR
 set name = Nietoper
 set tz_automatic_dst = EU
 
