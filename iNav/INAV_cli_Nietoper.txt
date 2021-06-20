@@ -101,6 +101,7 @@ aux 10 26 0 900 1300
 # osd_layout
 osd_layout 0 8 9 14 V
 osd_layout 0 27 24 2 V
+osd_layout 0 106 2 5 V
 
 # master
 set gyro_main_lpf_hz = 25
@@ -142,7 +143,16 @@ set nav_rth_allow_landing = FS_ONLY
 set nav_rth_altitude = 5000
 set nav_fw_bank_angle = 45
 set nav_fw_control_smoothness = 2
+set nav_fw_launch_velocity = 150
+set nav_fw_launch_accel = 1500
+set nav_fw_launch_max_angle = 180
+set nav_fw_launch_thr = 2000
+set nav_fw_launch_idle_thr = 1500
+set nav_fw_launch_motor_delay = 100
+set nav_fw_launch_timeout = 10000
 set osd_time_alarm = 30
+set osd_dist_alarm = 12000
+set osd_current_alarm = 14
 set osd_link_quality_alarm = 50
 set name = Nietoper
 set tz_automatic_dst = EU
