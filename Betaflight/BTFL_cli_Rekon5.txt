@@ -1,0 +1,99 @@
+diff all
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.1.7 May 28 2020 / 15:06:20 (9ba02a587) MSP API: 1.42
+# manufacturer_id: TMTR   board_name: TMOTORF7   custom defaults: YES
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name TMOTORF7
+manufacturer_id TMTR
+mcu_id 001e003c3756500820393558
+signature 
+
+# name: Rekon5
+
+# resources
+resource MOTOR 1 B01
+resource MOTOR 2 B00
+resource MOTOR 3 C07
+resource MOTOR 4 C06
+
+# feature
+feature -RX_PARALLEL_PWM
+feature INFLIGHT_ACC_CAL
+feature RX_SERIAL
+feature GPS
+feature TELEMETRY
+feature ESC_SENSOR
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# serial
+serial 0 64 115200 57600 0 115200
+serial 2 1 115200 57600 0 115200
+serial 3 1024 115200 57600 0 115200
+serial 4 2 115200 57600 0 115200
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 900 1300 0 0
+aux 3 13 3 1300 2100 0 0
+aux 4 26 0 1700 2100 0 0
+aux 5 40 2 1300 2100 0 0
+
+# master
+set acc_calibration = -2,18,180
+set fpv_mix_degrees = 20
+set serialrx_provider = CRSF
+set motor_pwm_protocol = DSHOT600
+set failsafe_switch_mode = STAGE2
+set failsafe_procedure = AUTO-LAND
+set bat_capacity = 3000
+set vbat_max_cell_voltage = 420
+set vbat_min_cell_voltage = 280
+set vbat_warning_cell_voltage = 320
+set yaw_motors_reversed = ON
+set gps_provider = UBLOX
+set gps_sbas_mode = EGNOS
+set gps_auto_baud = ON
+set debug_mode = GYRO_SCALED
+set name = Rekon5
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 3
+
+# save configuration
+save
+# 
