@@ -1,4 +1,4 @@
-diff all
+#diff all
 
 # version
 # Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
@@ -51,10 +51,7 @@ set failsafe_procedure = AUTO-LAND
 set 3d_deadband_throttle = 20
 set deadband = 5
 set yaw_deadband = 10
-set osd_units = 
-###ERROR IN diff: CORRUPTED CONFIG: osd_units = 8###
-set osd_rssi_alarm = 220
-###ERROR IN diff: CORRUPTED CONFIG: osd_rssi_alarm = 220###
+set osd_units = METRIC
 set osd_cap_alarm = 6661
 set osd_alt_alarm = 885
 set osd_vbat_pos = 2516
@@ -98,4 +95,3 @@ rateprofile 3
 
 # save configuration
 save
-# 
