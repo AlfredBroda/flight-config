@@ -1,0 +1,101 @@
+diff all
+
+# version
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
+# config: manufacturer_id: HARC, board_name: HAKRCF722D, version: f056e0d8, date: 2021-11-18T05:35:39Z
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name HAKRCF722D
+manufacturer_id HARC
+mcu_id 0014001d5931500820393539
+signature 
+
+# name: Zuczek
+
+# feature
+feature -RX_PARALLEL_PWM
+feature -LED_STRIP
+
+# serial
+serial 3 1024 115200 57600 0 115200
+serial 5 1 115200 57600 0 115200
+
+# beacon
+beacon RX_LOST
+beacon RX_SET
+
+# map
+map TAER1234
+
+# aux
+aux 0 0 0 1700 2100 0 0
+aux 1 1 1 1300 1700 0 0
+aux 2 2 1 900 1300 0 0
+aux 3 27 2 1700 2100 0 0
+aux 4 13 2 1300 2100 0 0
+aux 5 52 3 1700 2100 0 0
+
+# master
+set acc_calibration = -30,61,12,1
+set fpv_mix_degrees = 20
+set serialrx_provider = CRSF
+set motor_pwm_protocol = DSHOT600
+set failsafe_throttle = 1100
+set failsafe_switch_mode = STAGE2
+set failsafe_procedure = AUTO-LAND
+set 3d_deadband_throttle = 20
+set deadband = 5
+set yaw_deadband = 10
+set osd_units = 
+###ERROR IN diff: CORRUPTED CONFIG: osd_units = 8###
+set osd_rssi_alarm = 220
+###ERROR IN diff: CORRUPTED CONFIG: osd_rssi_alarm = 220###
+set osd_cap_alarm = 6661
+set osd_alt_alarm = 885
+set osd_vbat_pos = 2516
+set osd_current_pos = 2145
+set osd_craft_name_pos = 2539
+set osd_gps_speed_pos = 2113
+set osd_home_dir_pos = 2090
+set osd_home_dist_pos = 2092
+set osd_flight_dist_pos = 2049
+set osd_warnings_pos = 14761
+set osd_esc_rpm_pos = 2265
+set osd_efficiency_pos = 2081
+set gyro_1_sensor_align = CW270
+set gyro_1_align_yaw = 2700
+set gyro_2_align_yaw = 900
+set name = Zuczek
+
+profile 0
+
+profile 1
+
+profile 2
+
+# restore original profile selection
+profile 2
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 3
+
+# save configuration
+save
+# 
