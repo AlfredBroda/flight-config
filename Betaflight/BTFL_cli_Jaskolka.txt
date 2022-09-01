@@ -50,10 +50,11 @@ aux 0 0 0 1700 2100 0 0
 aux 1 1 1 1300 1700 0 0
 aux 2 2 1 900 1300 0 0
 aux 3 46 3 1875 2100 0 0
-aux 4 13 2 1300 2100 0 0
+aux 4 13 2 1700 2100 0 0
 aux 5 13 0 900 900 0 46
 aux 6 19 3 1150 1400 0 0
 aux 7 26 0 1700 2100 0 0
+aux 8 37 2 1300 1700 0 0
 
 # rxfail
 rxfail 5 s 1500
@@ -84,6 +85,7 @@ set vbat_scale = 112
 set yaw_motors_reversed = ON
 set gps_provider = UBLOX
 set gps_sbas_mode = AUTO
+set gps_ublox_use_galileo = ON
 set gps_set_home_point_once = ON
 set gps_rescue_ground_speed = 1100
 set gps_rescue_throttle_min = 1200
@@ -126,6 +128,8 @@ set osd_home_dist_pos = 6496
 set osd_compass_bar_pos = 42
 set osd_altitude_pos = 6464
 set osd_warnings_pos = 14761
+set osd_pit_ang_pos = 2264
+set osd_rol_ang_pos = 2232
 set osd_esc_tmp_pos = 153
 set osd_esc_rpm_pos = 2073
 set osd_stat_max_dist = ON

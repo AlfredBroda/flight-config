@@ -1,8 +1,8 @@
-# diff all
+diff all
 
 # version
-# INAV/MATEKF405SE 2.5.1 Jun 16 2020 / 12:50:26 (098a574b3)
-# GCC-9.2.1 20191025 (release) [ARM/arm-9-branch revision 277599]
+# INAV/MATEKF405SE 4.1.0 Feb 11 2022 / 10:52:32 (611d26f4)
+# GCC-10.2.1 20201103 (release)
 
 # start the command batch
 batch start
@@ -29,39 +29,45 @@ smix 3 4 1 50 0 -1
 # servo
 servo 3 1000 2000 1500 -100
 
+# safehome
+
 # logic
 
 # gvar
 
-# gf
+# pid
 
 # feature
 feature -SOFTSERIAL
 feature BAT_PROF_AUTOSWITCH
 feature MOTOR_STOP
 feature GPS
-feature LED_STRIP
 feature BLACKBOX
 feature PWM_OUTPUT_ENABLE
 feature FW_LAUNCH
 
 # beeper
 
+# blackbox
+blackbox -NAV_ACC
+blackbox NAV_POS
+blackbox NAV_PID
+blackbox MAG
+blackbox ACC
+blackbox ATTI
+blackbox RC_DATA
+blackbox RC_COMMAND
+blackbox MOTORS
+
 # map
 map TEAR
 
 # serial
+serial 0 1 115200 57600 0 115200
 serial 2 2 115200 115200 0 115200
+serial 3 33554432 115200 115200 0 115200
 
 # led
-led 0 11,7::C:5
-led 1 10,7::CB:5
-led 2 9,7::CO:3
-led 3 8,7::CO:3
-led 4 7,7::CO:3
-led 5 6,7::CO:3
-led 6 5,7::CB:2
-led 7 4,7::C:2
 
 # color
 
@@ -69,8 +75,8 @@ led 7 4,7::C:2
 
 # aux
 aux 0 0 0 1700 2100
-aux 1 1 3 900 1100
-aux 2 2 3 1400 1600
+aux 1 1 1 1275 1475
+aux 2 2 1 1475 1675
 aux 3 12 1 900 1200
 aux 4 21 2 1700 2100
 aux 5 26 0 1700 2100
@@ -85,30 +91,59 @@ aux 5 26 0 1700 2100
 #wp 0 invalid
 
 # osd_layout
+osd_layout 0 0 45 1 V
+osd_layout 0 1 0 14 V
+osd_layout 0 7 0 16 V
+osd_layout 0 8 9 13 H
+osd_layout 0 9 0 9 V
+osd_layout 0 11 0 13 V
+osd_layout 0 12 0 4 H
+osd_layout 0 13 33 0 V
+osd_layout 0 14 45 2 V
+osd_layout 0 15 1 0 H
+osd_layout 0 22 22 0 V
+osd_layout 0 23 23 0 V
+osd_layout 0 25 5 7 H
+osd_layout 0 26 2 1 V
+osd_layout 0 28 44 0 V
+osd_layout 0 30 12 17 V
+osd_layout 0 32 0 15 V
+osd_layout 0 33 0 10 V
+osd_layout 0 40 11 0 V
+osd_layout 0 48 22 1 H
+osd_layout 0 96 1 2 V
 
 # master
 set acc_hardware = MPU6000
+set acc_lpf_hz = 102
 set acczero_x = 17
 set acczero_y = -371
 set acczero_z = -106
 set accgain_x = 3945
 set accgain_y = 5995
 set accgain_z = 3883
+set align_mag = CW270FLIP
 set mag_hardware = NONE
 set baro_hardware = BMP280
-set pitot_hardware = NONE
 set serialrx_provider = CRSF
 set blackbox_rate_denom = 16
 set motor_pwm_protocol = DSHOT600
-set throttle_idle =  5.000
+set align_board_pitch = 2
 set model_preview_type = 8
 set applied_defaults = 1
+set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
+set gps_ublox_use_galileo = ON
+set osd_video_system = HD
+set osd_time_alarm = 20
+set osd_dist_alarm = 2000
 set name = Mewa
+set tz_automatic_dst = EU
 
 # profile
 profile 1
 
+set heading_hold_rate_limit = 101
 
 # profile
 profile 2
@@ -124,6 +159,7 @@ battery_profile 1
 set battery_capacity = 2200
 set battery_capacity_warning = 550
 set battery_capacity_critical = 220
+set throttle_idle =  5.000
 
 # battery_profile
 battery_profile 2
@@ -139,3 +175,5 @@ battery_profile 1
 
 # save configuration
 save
+
+# 
