@@ -1,7 +1,7 @@
 diff all
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.3.0 Apr 25 2022 / 10:41:07 (4743513be) MSP API: 1.44
+# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
 # config: manufacturer_id: TMTR, board_name: TMOTORF7, version: c2b8c0d3, date: 2021-06-18T03:42:42Z
 
 # start the command batch
@@ -15,7 +15,7 @@ manufacturer_id TMTR
 mcu_id 001e003c3756500820393558
 signature 
 
-# name: BATT < FULL
+# name: Rekon5
 
 # resources
 resource MOTOR 1 B01
@@ -42,6 +42,7 @@ beeper -GPS_STATUS
 
 # beacon
 beacon RX_LOST
+beacon RX_SET
 
 # map
 map TAER1234
@@ -77,27 +78,32 @@ set osd_warn_visual_beeper = OFF
 set osd_rssi_alarm = 99
 set osd_cap_alarm = 560
 set osd_alt_alarm = 0
+set osd_tim1 = 5120
+set osd_tim2 = 3841
 set osd_vbat_pos = 2464
 set osd_link_quality_pos = 2103
-set osd_remaining_time_estimate_pos = 2432
-set osd_flymode_pos = 2496
-set osd_current_pos = 2487
+set osd_tim_2_pos = 2552
+set osd_remaining_time_estimate_pos = 384
+set osd_flymode_pos = 2528
+set osd_current_pos = 2496
 set osd_craft_name_pos = 453
 set osd_display_name_pos = 457
 set osd_gps_speed_pos = 2508
 set osd_gps_sats_pos = 2071
 set osd_home_dir_pos = 2093
 set osd_home_dist_pos = 2094
+set osd_flight_dist_pos = 2521
 set osd_compass_bar_pos = 2059
 set osd_altitude_pos = 2048
 set osd_warnings_pos = 14761
 set osd_disarmed_pos = 2443
 set osd_nvario_pos = 2080
 set osd_esc_rpm_pos = 160
+set osd_core_temp_pos = 384
 set osd_displayport_device = MSP
 set debug_mode = GYRO_SCALED
 set displayport_msp_serial = 2
-set name = BATT < FULL
+set name = Rekon5
 
 profile 0
 
@@ -125,4 +131,3 @@ rateprofile 3
 
 # save configuration
 save
-# 
