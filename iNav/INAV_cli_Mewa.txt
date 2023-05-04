@@ -1,7 +1,7 @@
 diff all
 
 # version
-# INAV/MATEKF405SE 4.1.0 Feb 11 2022 / 10:52:32 (611d26f4)
+# INAV/MATEKF405SE 6.0.0 Mar 22 2023 / 10:18:18 (084101ac)
 # GCC-10.2.1 20201103 (release)
 
 # start the command batch
@@ -12,13 +12,13 @@ defaults noreboot
 
 # resources
 
-# mixer
+# Mixer: motor mixer
 
 mmix reset
 
 mmix 0  1.000  0.000  0.000  0.000
 
-# servo mix
+# Mixer: servo mixer
 smix reset
 
 smix 0 3 0 50 0 -1
@@ -26,18 +26,12 @@ smix 1 3 1 50 0 -1
 smix 2 4 0 -50 0 -1
 smix 3 4 1 50 0 -1
 
-# servo
+# Outputs [servo]
 servo 3 1000 2000 1500 -100
 
 # safehome
 
-# logic
-
-# gvar
-
-# pid
-
-# feature
+# features
 feature -SOFTSERIAL
 feature BAT_PROF_AUTOSWITCH
 feature MOTOR_STOP
@@ -58,62 +52,81 @@ blackbox ATTI
 blackbox RC_DATA
 blackbox RC_COMMAND
 blackbox MOTORS
+blackbox -GYRO_RAW
+blackbox -PEAKS_R
+blackbox -PEAKS_P
+blackbox -PEAKS_Y
 
-# map
+# Receiver: Channel map
 map TEAR
 
-# serial
+# Ports
 serial 0 1 115200 57600 0 115200
 serial 2 2 115200 115200 0 115200
 serial 3 33554432 115200 115200 0 115200
 
-# led
+# LEDs
 
-# color
+# LED color
 
-# mode_color
+# LED mode_color
 
-# aux
+# Modes [aux]
 aux 0 0 0 1700 2100
-aux 1 1 1 1275 1475
-aux 2 2 1 1475 1675
-aux 3 12 1 900 1200
-aux 4 21 2 1700 2100
-aux 5 26 0 1700 2100
+aux 1 1 1 1175 1375
+aux 2 2 1 1625 1825
+aux 3 12 1 900 1100
+aux 4 10 0 1875 2100
+aux 5 21 2 1700 2100
+aux 6 26 0 1700 2100
 
-# adjrange
+# Adjustments [adjrange]
 
-# rxrange
+# Receiver rxrange
 
 # temp_sensor
 
-# wp
+# Mission Control Waypoints [wp]
 #wp 0 invalid
 
-# osd_layout
-osd_layout 0 0 45 1 V
+# OSD [osd_layout]
+osd_layout 0 0 57 1 V
 osd_layout 0 1 0 14 V
-osd_layout 0 7 0 16 V
-osd_layout 0 8 9 13 H
+osd_layout 0 3 8 6 V
+osd_layout 0 4 8 6 V
+osd_layout 0 7 1 19 V
+osd_layout 0 8 28 20 V
 osd_layout 0 9 0 9 V
 osd_layout 0 11 0 13 V
 osd_layout 0 12 0 4 H
-osd_layout 0 13 33 0 V
-osd_layout 0 14 45 2 V
+osd_layout 0 13 44 0 V
+osd_layout 0 14 56 2 V
 osd_layout 0 15 1 0 H
-osd_layout 0 22 22 0 V
-osd_layout 0 23 23 0 V
+osd_layout 0 22 28 0 V
+osd_layout 0 23 30 0 V
 osd_layout 0 25 5 7 H
 osd_layout 0 26 2 1 V
-osd_layout 0 28 44 0 V
-osd_layout 0 30 12 17 V
+osd_layout 0 28 54 0 V
+osd_layout 0 30 16 17 V
 osd_layout 0 32 0 15 V
 osd_layout 0 33 0 10 V
+osd_layout 0 34 25 2 V
 osd_layout 0 40 11 0 V
+osd_layout 0 41 1 8 V
 osd_layout 0 48 22 1 H
 osd_layout 0 96 1 2 V
 
+# Programming: logic
+
+# Programming: global variables
+
+# Programming: PID controllers
+
 # master
+set gyro_zero_x = -44
+set gyro_zero_y = -4
+set gyro_zero_z = -6
+set ins_gravity_cmss =  1146.933
 set acc_hardware = MPU6000
 set acc_lpf_hz = 102
 set acczero_x = 17
@@ -128,16 +141,21 @@ set baro_hardware = BMP280
 set serialrx_provider = CRSF
 set blackbox_rate_denom = 16
 set motor_pwm_protocol = DSHOT600
+set failsafe_procedure = RTH
 set align_board_pitch = 2
 set model_preview_type = 8
 set applied_defaults = 1
 set gps_provider = UBLOX7
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
-set osd_video_system = HD
+set nav_fw_launch_spinup_time = 300
+set nav_fw_launch_min_time = 2000
+set nav_fw_allow_manual_thr_increase = ON
+set osd_video_system = DJIWTF
 set osd_time_alarm = 20
 set osd_dist_alarm = 2000
-set name = Mewa
+set name = MEWA
+set pilot_name = ALFRED
 set tz_automatic_dst = EU
 
 # profile
@@ -175,5 +193,3 @@ battery_profile 1
 
 # save configuration
 save
-
-# 
