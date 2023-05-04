@@ -1,8 +1,9 @@
 diff all
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.3.1 Jul 13 2022 / 03:36:10 (8d4f005) MSP API: 1.44
-# config: manufacturer_id: TMTR, board_name: TMOTORF7, version: c2b8c0d3, date: 2021-06-18T03:42:42Z
+# Betaflight / STM32F7X2 (S7X2) 4.4.1 May  4 2023 / 08:10:56 (e43d591b2) MSP API: 1.45
+
+# config: YES
 
 # start the command batch
 batch start
@@ -24,15 +25,12 @@ resource MOTOR 3 C07
 resource MOTOR 4 C06
 
 # feature
-feature -RX_PARALLEL_PWM
-feature RX_SERIAL
 feature GPS
-feature TELEMETRY
 feature ESC_SENSOR
 
 # serial
 serial 0 64 115200 57600 0 115200
-serial 2 1 115200 57600 0 115200
+serial 2 131073 115200 57600 0 115200
 serial 3 1024 115200 57600 0 115200
 serial 4 2 115200 57600 0 115200
 
@@ -60,7 +58,6 @@ aux 7 40 2 1300 2100 0 0
 # master
 set acc_calibration = -29,-3,-62,1
 set fpv_mix_degrees = 20
-set serialrx_provider = CRSF
 set motor_pwm_protocol = DSHOT600
 set failsafe_switch_mode = STAGE2
 set failsafe_procedure = GPS-RESCUE
@@ -70,46 +67,47 @@ set vbat_min_cell_voltage = 280
 set vbat_warning_cell_voltage = 320
 set beeper_dshot_beacon_tone = 3
 set yaw_motors_reversed = ON
-set gps_provider = UBLOX
 set gps_sbas_mode = EGNOS
 set gps_auto_baud = ON
 set gps_rescue_allow_arming_without_fix = ON
-set osd_warn_visual_beeper = OFF
 set osd_rssi_alarm = 99
 set osd_cap_alarm = 560
 set osd_alt_alarm = 0
 set osd_tim1 = 5120
 set osd_tim2 = 3841
-set osd_vbat_pos = 2464
-set osd_link_quality_pos = 2103
-set osd_tim_2_pos = 2552
+set osd_vbat_pos = 2432
+set osd_link_quality_pos = 3157
+set osd_tim_2_pos = 2401
 set osd_remaining_time_estimate_pos = 384
-set osd_flymode_pos = 2528
-set osd_current_pos = 2496
-set osd_craft_name_pos = 453
-set osd_display_name_pos = 457
-set osd_gps_speed_pos = 2508
-set osd_gps_sats_pos = 2071
-set osd_home_dir_pos = 2093
-set osd_home_dist_pos = 2094
-set osd_flight_dist_pos = 2521
-set osd_compass_bar_pos = 2059
-set osd_altitude_pos = 2048
-set osd_warnings_pos = 14761
-set osd_disarmed_pos = 2443
-set osd_nvario_pos = 2080
+set osd_flymode_pos = 2432
+set osd_current_pos = 2432
+set osd_craft_name_pos = 389
+set osd_gps_speed_pos = 2113
+set osd_gps_sats_pos = 3095
+set osd_home_dir_pos = 2071
+set osd_home_dist_pos = 2073
+set osd_flight_dist_pos = 2079
+set osd_compass_bar_pos = 2137
+set osd_altitude_pos = 2049
+set osd_warnings_pos = 14841
+set osd_disarmed_pos = 2497
 set osd_esc_rpm_pos = 160
 set osd_core_temp_pos = 384
 set osd_displayport_device = MSP
+set osd_canvas_width = 60
+set osd_canvas_height = 22
 set debug_mode = GYRO_SCALED
-set displayport_msp_serial = 2
-set name = Rekon5
+set vcd_video_system = HD
+set craft_name = Rekon5
+set pilot_name = Alfred
 
 profile 0
 
 profile 1
 
 profile 2
+
+profile 3
 
 # restore original profile selection
 profile 0
@@ -121,10 +119,6 @@ rateprofile 1
 rateprofile 2
 
 rateprofile 3
-
-rateprofile 4
-
-rateprofile 5
 
 # restore original rateprofile selection
 rateprofile 3
