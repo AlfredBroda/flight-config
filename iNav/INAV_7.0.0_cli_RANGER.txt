@@ -19,6 +19,7 @@ defaults noreboot
 # safehome
 
 # features
+feature GPS
 feature PWM_OUTPUT_ENABLE
 
 # beeper
@@ -43,6 +44,7 @@ map TAER
 
 # Ports
 serial 2 2097152 115200 115200 0 115200
+serial 3 2 115200 115200 0 115200
 
 # LEDs
 
@@ -90,9 +92,9 @@ set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
 set gyro_zero_x = -44
-set gyro_zero_y = -3
-set gyro_zero_z = -2
-set ins_gravity_cmss =  993.766
+set gyro_zero_y = -4
+set gyro_zero_z = -3
+set ins_gravity_cmss =  977.721
 set acc_hardware = MPU6000
 set acczero_x = 26
 set acczero_y = 5
@@ -106,6 +108,9 @@ set baro_hardware = BMP280
 set motor_pwm_protocol = DSHOT150
 set small_angle = 180
 set applied_defaults = 3
+set gps_provider = UBLOX7
+set gps_sbas_mode = AUTO
+set gps_ublox_use_galileo = ON
 set airmode_type = STICK_CENTER_ONCE
 set nav_wp_radius = 5000
 set nav_wp_max_safe_distance = 500
@@ -117,6 +122,8 @@ set nav_fw_launch_max_altitude = 5000
 set nav_fw_launch_climb_angle = 25
 set name = RANGER
 set pilot_name = FRED
+set tz_offset = 60
+set tz_automatic_dst = EU
 
 # mixer_profile
 mixer_profile 1
